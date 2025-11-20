@@ -1,24 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Green Network - Protect Earth</title>
+    <title>Forest Whisper - 聆听森林的呼吸</title>
+    <!-- 引入图标库 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* 保持原有优秀的 CSS 结构，仅微调个别字体设置以适配中文 */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: "PingFang SC", "Microsoft YaHei", 'Segoe UI', sans-serif; /* 增加中文字体支持 */
         }
 
         :root {
-            --primary: #2e7d32;
-            --secondary: #4caf50;
-            --accent: #8bc34a;
-            --light: #e8f5e9;
-            --dark: #1b5e20;
+            --primary: #2e7d32;   /* 森林绿 */
+            --secondary: #388e3c; /* 次级绿 */
+            --accent: #81c784;    /* 嫩芽绿 */
+            --light: #f1f8e9;     /* 极浅绿背景 */
+            --dark: #1b5e20;      /* 深林绿 */
             --text: #333333;
             --white: #ffffff;
         }
@@ -30,7 +32,7 @@
         }
 
         header {
-            background: linear-gradient(to right, var(--primary), var(--secondary));
+            background: linear-gradient(to right, var(--dark), var(--primary)); /* 加深头部颜色 */
             color: var(--white);
             padding: 1rem 0;
             position: sticky;
@@ -57,10 +59,12 @@
             gap: 10px;
             font-size: 1.8rem;
             font-weight: 700;
+            letter-spacing: 1px;
         }
 
         .logo i {
             font-size: 2rem;
+            color: var(--accent);
         }
 
         nav ul {
@@ -100,11 +104,12 @@
             width: 100%;
         }
 
+        /* Hero 部分：更换为迷雾森林背景 */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1448375240586-dfd8d395ea6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
-            height: 80vh;
+            height: 85vh; /* 稍微增加高度 */
             display: flex;
             align-items: center;
             text-align: center;
@@ -120,31 +125,34 @@
             font-size: 3.5rem;
             margin-bottom: 1rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-weight: 800;
         }
 
         .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
         }
 
         .btn {
             display: inline-block;
-            background-color: var(--accent);
+            background-color: var(--secondary);
             color: var(--white);
-            padding: 0.8rem 2rem;
+            padding: 0.8rem 2.5rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
-            border: none;
+            border: 2px solid transparent;
             cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         }
 
         .btn:hover {
-            background-color: var(--primary);
+            background-color: transparent;
+            border-color: var(--white);
             transform: translateY(-3px);
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         }
 
         section {
@@ -153,12 +161,12 @@
 
         .section-title {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
         }
 
         .section-title h2 {
             font-size: 2.5rem;
-            color: var(--primary);
+            color: var(--dark);
             margin-bottom: 1rem;
             position: relative;
             display: inline-block;
@@ -167,69 +175,74 @@
         .section-title h2::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: -12px;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
+            width: 60px;
             height: 4px;
-            background-color: var(--accent);
+            background-color: var(--secondary);
             border-radius: 2px;
         }
 
         .section-title p {
-            color: var(--text);
+            color: #666;
             max-width: 700px;
-            margin: 0 auto;
+            margin: 1rem auto 0;
         }
 
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 4rem;
             align-items: center;
         }
 
         .about-img {
-            border-radius: 10px;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
 
         .about-img img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
             display: block;
-            transition: transform 0.5s ease;
+            transition: transform 0.6s ease;
         }
 
         .about-img:hover img {
-            transform: scale(1.05);
+            transform: scale(1.08);
         }
 
         .about-text h3 {
-            font-size: 1.8rem;
+            font-size: 2rem;
             margin-bottom: 1.5rem;
             color: var(--dark);
         }
 
         .about-text p {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
+            color: #555;
+            font-size: 1.05rem;
         }
 
+        /* 统计区域 */
         .stats {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
-            margin-top: 3rem;
+            margin-top: 4rem;
         }
 
         .stat-item {
             text-align: center;
-            padding: 2rem 1rem;
+            padding: 2.5rem 1.5rem;
             background-color: var(--white);
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(27, 94, 32, 0.05); /* 绿色阴影 */
             transition: transform 0.3s ease;
+            border-bottom: 4px solid var(--accent);
         }
 
         .stat-item:hover {
@@ -237,21 +250,24 @@
         }
 
         .stat-item i {
-            font-size: 2.5rem;
+            font-size: 3rem;
             color: var(--primary);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .stat-item h3 {
             font-size: 2.5rem;
             color: var(--dark);
             margin-bottom: 0.5rem;
+            font-weight: 800;
         }
 
         .stat-item p {
-            color: var(--text);
+            color: #666;
+            font-weight: 600;
         }
 
+        /* 保护项目区域 */
         .initiatives {
             background-color: var(--white);
         }
@@ -259,99 +275,112 @@
         .initiatives-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         .initiative-card {
-            background-color: var(--light);
-            border-radius: 10px;
+            background-color: var(--white);
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
         }
 
         .initiative-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-15px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
         }
 
         .initiative-img {
-            height: 200px;
+            height: 220px;
             overflow: hidden;
+            position: relative;
         }
 
         .initiative-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 0.8s ease;
         }
 
         .initiative-card:hover .initiative-img img {
-            transform: scale(1.1);
+            transform: scale(1.15);
         }
 
         .initiative-content {
-            padding: 1.5rem;
+            padding: 2rem;
         }
 
         .initiative-content h3 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             margin-bottom: 1rem;
             color: var(--dark);
         }
 
         .initiative-content p {
             margin-bottom: 1.5rem;
+            color: #666;
+            font-size: 0.95rem;
         }
 
+        /* CTA 区域 */
         .cta {
-            background: linear-gradient(to right, var(--primary), var(--secondary));
+            background: linear-gradient(rgba(27, 94, 32, 0.85), rgba(46, 125, 50, 0.85)), url('https://images.unsplash.com/photo-1511497584788-876760111969?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-attachment: fixed; /* 视差滚动效果 */
             color: var(--white);
             text-align: center;
-            padding: 5rem 0;
+            padding: 6rem 0;
         }
 
         .cta h2 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 1.5rem;
         }
 
         .cta p {
             font-size: 1.2rem;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
+            opacity: 0.9;
         }
 
         .cta .btn {
             background-color: var(--white);
-            color: var(--primary);
+            color: var(--dark);
+            font-weight: 700;
         }
 
         .cta .btn:hover {
             background-color: var(--accent);
             color: var(--white);
+            border-color: var(--accent);
         }
 
+        /* 页脚 */
         footer {
-            background-color: var(--dark);
-            color: var(--white);
-            padding: 3rem 0 1rem;
+            background-color: #1a1a1a;
+            color: #ccc;
+            padding: 4rem 0 1rem;
         }
 
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            margin-bottom: 2rem;
+            grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
         }
 
         .footer-column h3 {
             font-size: 1.3rem;
             margin-bottom: 1.5rem;
             position: relative;
-            padding-bottom: 10px;
+            padding-bottom: 12px;
+            color: var(--white);
         }
 
         .footer-column h3::after {
@@ -359,13 +388,14 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 40px;
-            height: 2px;
-            background-color: var(--accent);
+            width: 35px;
+            height: 3px;
+            background-color: var(--secondary);
         }
 
         .footer-column p {
             margin-bottom: 1rem;
+            line-height: 1.8;
         }
 
         .footer-links {
@@ -377,19 +407,21 @@
         }
 
         .footer-links li a {
-            color: var(--light);
+            color: #bbb;
             text-decoration: none;
             transition: all 0.3s ease;
+            display: inline-block;
         }
 
         .footer-links li a:hover {
             color: var(--accent);
-            padding-left: 5px;
+            transform: translateX(5px);
         }
 
         .social-links {
             display: flex;
             gap: 1rem;
+            margin-top: 1rem;
         }
 
         .social-links a {
@@ -398,7 +430,7 @@
             justify-content: center;
             width: 40px;
             height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(255, 255, 255, 0.05);
             border-radius: 50%;
             color: var(--white);
             text-decoration: none;
@@ -406,22 +438,25 @@
         }
 
         .social-links a:hover {
-            background-color: var(--accent);
-            transform: translateY(-5px);
+            background-color: var(--secondary);
+            transform: translateY(-3px);
         }
 
         .copyright {
             text-align: center;
             padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.9rem;
         }
 
         .mobile-menu {
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
+            color: var(--white);
         }
 
+        /* 响应式适配 */
         @media (max-width: 992px) {
             .about-content {
                 grid-template-columns: 1fr;
@@ -442,7 +477,7 @@
 
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
             
             .hero p {
@@ -455,11 +490,11 @@
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background-color: var(--primary);
+                background-color: var(--dark);
                 flex-direction: column;
-                padding: 1rem 0;
+                padding: 1.5rem 0;
                 text-align: center;
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             }
             
             nav ul.active {
@@ -468,7 +503,7 @@
             
             nav ul li {
                 margin: 0;
-                padding: 0.8rem 0;
+                padding: 1rem 0;
             }
             
             .mobile-menu {
@@ -487,197 +522,199 @@
                 grid-template-columns: 1fr;
             }
         }
-
-        /* Animation for stats counter */
-        .counter {
-            transition: all 0.5s ease;
-        }
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- 头部导航 -->
     <header>
         <div class="container nav-container">
             <div class="logo">
-                <i class="fas fa-seedling"></i>
-                <span>Green Network</span>
+                <!-- 更换为树木图标 -->
+                <i class="fas fa-tree"></i>
+                <span>Forest Whisper</span>
             </div>
             <nav>
                 <div class="mobile-menu">
                     <i class="fas fa-bars"></i>
                 </div>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#initiatives">Initiatives</a></li>
-                    <li><a href="#get-involved">Get Involved</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#home">首页</a></li>
+                    <li><a href="#about">关于森林</a></li>
+                    <li><a href="#initiatives">生态保护</a></li>
+                    <li><a href="#join">加入我们</a></li>
+                    <li><a href="#contact">联系方式</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- 英雄展示区 (Hero) -->
     <section class="hero" id="home">
         <div class="container hero-content">
-            <h1>Protect Our Planet, Preserve Our Future</h1>
-            <p>Join the global movement to create a sustainable world through conservation, education, and community action.</p>
-            <a href="#get-involved" class="btn">Join Our Network</a>
+            <h1>聆听自然深处的呼吸</h1>
+            <p>在这个快节奏的世界里，让我们重新连接古老的智慧。森林不仅仅是树木的集合，更是地球生命的摇篮与归宿。</p>
+            <a href="#about" class="btn">探索自然之美</a>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- 关于森林 (About) -->
     <section id="about">
         <div class="container">
             <div class="section-title">
-                <h2>About Green Network</h2>
-                <p>We are a global community dedicated to environmental protection and sustainable development.</p>
+                <h2>自然的馈赠</h2>
+                <p>森林是地球的肺叶，为数百万种生物提供栖息地，也为人类提供生存所需的氧气与宁静。</p>
             </div>
             <div class="about-content">
                 <div class="about-img">
-                    <img src="https://images.unsplash.com/photo-1507591064344-4c6ce005b128?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Team planting trees">
+                    <!-- 使用更具生态感的苔藓/微距图片 -->
+                    <img src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80" alt="Deep Forest Ecosystem">
                 </div>
                 <div class="about-text">
-                    <h3>Our Mission</h3>
-                    <p>Green Network is committed to creating a sustainable future by protecting natural ecosystems, promoting renewable energy, and empowering communities to take environmental action.</p>
-                    <p>Founded in 2010, we've grown from a small grassroots organization to an international network with over 50,000 members across 120 countries.</p>
-                    <p>Our approach combines scientific research, community engagement, and policy advocacy to address the most pressing environmental challenges of our time.</p>
-                    <a href="#" class="btn">Learn More</a>
+                    <h3>维系生态平衡的关键</h3>
+                    <p>Forest Whisper (森林物语) 是一个专注于森林生态保护与自然教育的非营利性平台。我们相信，每一次深呼吸，都源自远处森林的默默奉献。</p>
+                    <p>全球森林覆盖率正在逐年下降，保护原始森林、恢复退化植被刻不容缓。森林不仅调节气候、涵养水源，更是生物多样性的宝库。</p>
+                    <p>通过科学保育、社区共建和自然科普，我们致力于让人类重新学会与自然和谐共生，让绿色不仅是颜色，更是一种生活方式。</p>
+                    <a href="#initiatives" class="btn" style="background-color: var(--primary);">了解我们的工作</a>
                 </div>
             </div>
+            <!-- 统计数据 -->
             <div class="stats">
                 <div class="stat-item">
-                    <i class="fas fa-tree"></i>
-                    <h3 class="counter" data-target="2500000">0</h3>
-                    <p>Trees Planted</p>
+                    <i class="fas fa-seedling"></i>
+                    <!-- 数字含义修改 -->
+                    <h3 class="counter" data-target="80000">0</h3>
+                    <p>已恢复林地 (亩)</p>
                 </div>
                 <div class="stat-item">
-                    <i class="fas fa-users"></i>
-                    <h3 class="counter" data-target="50000">0</h3>
-                    <p>Active Members</p>
+                    <i class="fas fa-crow"></i>
+                    <h3 class="counter" data-target="450">0</h3>
+                    <p>监测珍稀物种</p>
                 </div>
                 <div class="stat-item">
-                    <i class="fas fa-globe-americas"></i>
-                    <h3 class="counter" data-target="120">0</h3>
-                    <p>Countries Reached</p>
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h3 class="counter" data-target="12000">0</h3>
+                    <p>志愿守护者</p>
                 </div>
                 <div class="stat-item">
-                    <i class="fas fa-recycle"></i>
-                    <h3 class="counter" data-target="1500">0</h3>
-                    <p>Cleanup Projects</p>
+                    <i class="fas fa-cloud-sun"></i>
+                    <h3 class="counter" data-target="98">0</h3>
+                    <p>生态改善指数</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Initiatives Section -->
+    <!-- 生态保护项目 (Initiatives) -->
     <section class="initiatives" id="initiatives">
         <div class="container">
             <div class="section-title">
-                <h2>Our Initiatives</h2>
-                <p>Discover the key programs and projects we're implementing to protect our planet.</p>
+                <h2>生态行动</h2>
+                <p>我们正在进行的重点项目，旨在修复受损的生态系统并保护濒危的野生动植物。</p>
             </div>
             <div class="initiatives-grid">
+                <!-- 卡片 1 -->
                 <div class="initiative-card">
                     <div class="initiative-img">
-                        <img src="https://dialogue.earth/content/uploads/2021/04/lessons-from-the-rush-to-reforest-china-dialogue-2400x1599.jpg" alt="Reforestation">
+                        <img src="https://images.unsplash.com/photo-1516214104703-d433c688f964?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Forest Restoration">
                     </div>
                     <div class="initiative-content">
-                        <h3>Global Reforestation</h3>
-                        <p>Planting millions of trees worldwide to restore ecosystems, combat climate change, and protect biodiversity.</p>
-                        <a href="#" class="btn">Learn More</a>
+                        <h3>原生林修复</h3>
+                        <p>通过科学的混交林种植，恢复被砍伐地区的土壤活力，重建完整的生态食物链。</p>
+                        <a href="#" style="color: var(--primary); font-weight:600; text-decoration: none;">查看详情 <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
+                <!-- 卡片 2 -->
                 <div class="initiative-card">
                     <div class="initiative-img">
-                        <img src="https://images.unsplash.com/photo-1621451537084-482c73073a0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Ocean Conservation">
+                        <img src="https://images.unsplash.com/photo-1474511320723-9a56873867b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2072&q=80" alt="Wildlife Protection">
                     </div>
                     <div class="initiative-content">
-                        <h3>Ocean Conservation</h3>
-                        <p>Protecting marine ecosystems, reducing plastic pollution, and promoting sustainable fishing practices.</p>
-                        <a href="#" class="btn">Learn More</a>
+                        <h3>野生动物廊道</h3>
+                        <p>建立生态廊道，连接破碎化的栖息地，让鹿群、野猪和其他动物能够自由迁徙繁衍。</p>
+                        <a href="#" style="color: var(--primary); font-weight:600; text-decoration: none;">查看详情 <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
+                <!-- 卡片 3 -->
                 <div class="initiative-card">
                     <div class="initiative-img">
-                        <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" alt="Renewable Energy">
+                        <img src="https://images.unsplash.com/photo-1503023345313-0f05859462fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Nature Education">
                     </div>
                     <div class="initiative-content">
-                        <h3>Renewable Energy</h3>
-                        <p>Promoting solar, wind, and other clean energy sources to reduce dependence on fossil fuels.</p>
-                        <a href="#" class="btn">Learn More</a>
+                        <h3>自然教育营地</h3>
+                        <p>带领青少年走进森林，通过观察植物、辨识鸟鸣，培养下一代对大自然的敬畏与热爱。</p>
+                        <a href="#" style="color: var(--primary); font-weight:600; text-decoration: none;">查看详情 <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta" id="get-involved">
+    <!-- CTA 号召区域 -->
+    <section class="cta" id="join">
         <div class="container">
-            <h2>Join Our Global Movement</h2>
-            <p>Together, we can create a sustainable future for generations to come. Every action counts, no matter how small.</p>
-            <a href="#" class="btn">Become a Member</a>
+            <h2>成为森林的守护者</h2>
+            <p>大自然不需要人类，但人类需要大自然。加入我们的全球网络，为您所在地区的森林保护贡献一份力量。</p>
+            <a href="#" class="btn">立即加入行动</a>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- 页脚 (Footer) -->
     <footer id="contact">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>Green Network</h3>
-                    <p>We are dedicated to protecting our planet through collaborative action, education, and sustainable solutions.</p>
+                    <h3>Forest Whisper</h3>
+                    <p>我们致力于通过保护森林来守护地球的未来。每一棵树的生长，都是对生命的礼赞。</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-weixin"></i></a>
+                        <a href="#"><i class="fab fa-weibo"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
-                    <h3>Quick Links</h3>
+                    <h3>快速导航</h3>
                     <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#initiatives">Initiatives</a></li>
-                        <li><a href="#get-involved">Get Involved</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#home">回到首页</a></li>
+                        <li><a href="#about">关于我们</a></li>
+                        <li><a href="#initiatives">保护项目</a></li>
+                        <li><a href="#join">志愿者招募</a></li>
+                        <li><a href="#">捐赠支持</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Our Programs</h3>
+                    <h3>科普资源</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Reforestation</a></li>
-                        <li><a href="#">Ocean Cleanup</a></li>
-                        <li><a href="#">Wildlife Protection</a></li>
-                        <li><a href="#">Climate Education</a></li>
-                        <li><a href="#">Sustainable Agriculture</a></li>
+                        <li><a href="#">植物图鉴</a></li>
+                        <li><a href="#">森林防火知识</a></li>
+                        <li><a href="#">低碳生活指南</a></li>
+                        <li><a href="#">生态摄影展</a></li>
+                        <li><a href="#">研究报告</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Contact Us</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Copper Creek Drive, New York</p>
-                    <p><i class="fas fa-phone"></i> +1 (312) 171-0771</p>
-                    <p><i class="fas fa-envelope"></i> support@greennetwork.org</p>
+                    <h3>联系我们</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 森林生态保护中心, 云谷大道 108 号</p>
+                    <p><i class="fas fa-phone"></i> +86 10 8888 6666</p>
+                    <p><i class="fas fa-envelope"></i> hello@forestwhisper.org</p>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 Green Network. All rights reserved.</p>
+                <p>&copy; 2025 Forest Whisper (森林物语). 保留所有权利. 热爱自然，守护地球。</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile Menu Toggle
+        // 移动端菜单切换
         document.querySelector('.mobile-menu').addEventListener('click', function() {
             document.querySelector('nav ul').classList.toggle('active');
         });
 
-        // Counter Animation
+        // 数字增长动画
         function animateCounters() {
             const counters = document.querySelectorAll('.counter');
-            const speed = 200; // The lower the slower
+            const speed = 150; // 速度控制
             
             counters.forEach(counter => {
                 const target = +counter.getAttribute('data-target');
@@ -687,17 +724,26 @@
                 
                 if(count < target) {
                     counter.innerText = Math.ceil(count + inc);
-                    setTimeout(animateCounters, 1);
+                    setTimeout(animateCounters, 20); // 稍微减慢刷新率使动画更流畅
                 } else {
-                    counter.innerText = target;
+                    counter.innerText = target.toLocaleString(); // 添加千位分隔符
                 }
             });
         }
 
-        // Initialize counters when page loads
-        window.addEventListener('load', animateCounters);
+        // 页面加载时初始化计数器
+        // 优化：使用 Intersection Observer 当滚动到可视区域时才开始动画
+        let counted = false;
+        const statsSection = document.querySelector('.stats');
+        
+        window.addEventListener('scroll', () => {
+            if(!counted && window.scrollY + window.innerHeight > statsSection.offsetTop) {
+                animateCounters();
+                counted = true;
+            }
+        });
 
-        // Smooth scrolling for navigation links
+        // 平滑滚动
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -708,15 +754,15 @@
                 const targetElement = document.querySelector(targetId);
                 if(targetElement) {
                     window.scrollTo({
-                        top: targetElement.offsetTop - 80,
+                        top: targetElement.offsetTop - 70, // 减去 Header 高度
                         behavior: 'smooth'
                     });
                     
+                    // 点击链接后自动关闭移动端菜单
                     document.querySelector('nav ul').classList.remove('active');
                 }
             });
         });
     </script>
 </body>
-
 </html>
